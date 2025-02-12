@@ -152,25 +152,74 @@ section ul li a[download]:hover {
 /* 联系方式部分 */
 #contact {
     background-color: #f8f9fa;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+#contact > p {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #contact ul {
     list-style: none;
-    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 #contact ul li {
-    margin: 1rem 0;
+    font-size: 1.1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#contact a {
+#contact ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#contact ul li a {
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s;
+    display: inline-block;
+    position: relative;
 }
 
-#contact a:hover {
+#contact ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#contact ul li a:hover {
     color: #0056b3;
+}
+
+#contact ul li a:hover::after {
+    transform: scaleX(1);
 }
 
 /* 页脚样式 */
