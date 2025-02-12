@@ -9,6 +9,7 @@ body {
     font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
     color: #333;
+    padding-top: 60px; /* 为固定导航栏留出空间 */
 }
 
 /* 导航栏样式 */
@@ -37,6 +38,7 @@ nav ul li a {
     color: #333;
     font-weight: 500;
     transition: color 0.3s;
+    font-size: 1.1rem;
 }
 
 nav ul li a:hover {
@@ -45,64 +47,138 @@ nav ul li a:hover {
 
 /* Hero 区域样式 */
 #hero {
-    height: 100vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     text-align: center;
-    padding: 0 20px;
+    padding: 4rem 20px;
 }
 
 #hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-/* 内容区域通用样式 */
-section {
-    padding: 5rem 2rem;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2rem;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
     color: #2c3e50;
 }
 
-/* 项目卡片样式 */
+#hero p {
+    font-size: 1.4rem;
+    color: #34495e;
+    max-width: 600px;
+}
+
+/* 关于我部分 */
+#about {
+    background-color: #ffffff;
+    padding: 5rem 2rem;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: #2c3e50;
+}
+
+#about p {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #34495e;
+}
+
+/* 项目部分 */
+#projects {
+    background-color: #f8f9fa;
+    padding: 5rem 2rem;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    color: #2c3e50;
+}
+
 .project {
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .project:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .project h3 {
     color: #007bff;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
-/* 联系方式样式 */
+.project p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* 简历下载部分 */
+section ul {
+    list-style: none;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+section ul li a[download] {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+section ul li a[download]:hover {
+    background-color: #0056b3;
+}
+
+/* 联系方式部分 */
 #contact {
     background-color: #f8f9fa;
+    padding: 5rem 2rem;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#contact p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
 }
 
 #contact ul {
     list-style: none;
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #contact ul li {
     margin: 1rem 0;
+    font-size: 1.1rem;
 }
 
 #contact a {
@@ -123,20 +199,26 @@ footer {
     padding: 2rem;
 }
 
-/* 响应式设计 */
-@media (min-width: 768px) {
-    .project {
-        max-width: 800px;
-        margin: 0 auto 2rem auto;
-    }
+footer p {
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
+/* 响应式设计 */
 @media (max-width: 768px) {
     #hero h1 {
         font-size: 2rem;
     }
     
+    #hero p {
+        font-size: 1.2rem;
+    }
+    
     section {
         padding: 3rem 1rem;
+    }
+    
+    .project {
+        margin: 0 1rem 2rem 1rem;
     }
 } 
