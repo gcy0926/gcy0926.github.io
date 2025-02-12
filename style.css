@@ -70,23 +70,65 @@ nav ul li a:hover {
 
 /* 关于我部分 */
 #about {
-    background-color: #ffffff;
+    background-color: #f8f9fa;
     padding: 5rem 2rem;
+    position: relative;
 }
 
 #about h2 {
     text-align: center;
-    margin-bottom: 2rem;
     font-size: 2.2rem;
     color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
 }
 
 #about p {
-    text-align: center;
-    font-size: 1.2rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
     color: #34495e;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    position: relative;
+}
+
+#about p:not(:last-child) {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px dashed #dee2e6;
+}
+
+#about p:first-of-type {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* 添加左侧装饰线 */
+#about p {
+    padding-left: 20px;
+    border-left: 3px solid #007bff;
+    background-color: white;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about p:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* 项目部分 */
@@ -300,6 +342,7 @@ footer p {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+/* 响应式调整 */
 @media (max-width: 768px) {
     #hero h1 {
         font-size: 2rem;
@@ -307,5 +350,18 @@ footer p {
     
     section {
         padding: 3rem 1rem;
+    }
+    
+    #about {
+        padding: 3rem 1rem;
+    }
+    
+    #about p {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+    
+    #about p:first-of-type {
+        font-size: 1.1rem;
     }
 } 
