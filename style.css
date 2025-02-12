@@ -71,22 +71,23 @@ nav ul li a:hover {
 /* 关于我部分 */
 #about {
     background-color: #f8f9fa;
-    padding: 5rem 2rem;
+    padding: 6rem 2rem;
     position: relative;
+    text-align: center;
 }
 
 #about h2 {
     text-align: center;
     font-size: 2.2rem;
     color: #2c3e50;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     position: relative;
 }
 
 #about h2::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
@@ -96,39 +97,52 @@ nav ul li a:hover {
 
 #about p {
     max-width: 800px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 3.5rem; /* 增加段落间距 */
     line-height: 1.8;
     color: #34495e;
     font-size: 1.1rem;
-    padding: 0 1rem;
+    text-align: justify; /* 两端对齐，更整洁 */
     position: relative;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 2rem 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#about p:not(:last-child) {
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px dashed #dee2e6;
+#about p:last-child {
+    margin-bottom: 0;
 }
 
-#about p:first-of-type {
+/* 为每个段落添加不同的左边框颜色 */
+#about .about-intro {
+    border-left: 4px solid #007bff;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-/* 添加左侧装饰线 */
-#about p {
-    padding-left: 20px;
-    border-left: 3px solid #007bff;
-    background-color: white;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+#about .about-experience {
+    border-left: 4px solid #28a745;
+}
+
+#about .about-achievement {
+    border-left: 4px solid #ffc107;
 }
 
 #about p:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-5px); /* 改为向上浮动 */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* 添加装饰元素 */
+#about p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,123,255,0.2), transparent);
 }
 
 /* 项目部分 */
@@ -353,15 +367,16 @@ footer p {
     }
     
     #about {
-        padding: 3rem 1rem;
+        padding: 4rem 1rem;
     }
     
     #about p {
         font-size: 1rem;
         padding: 1.5rem;
+        margin-bottom: 2.5rem;
     }
     
-    #about p:first-of-type {
+    #about .about-intro {
         font-size: 1.1rem;
     }
 } 
